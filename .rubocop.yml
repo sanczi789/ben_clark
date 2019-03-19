@@ -1,0 +1,31 @@
+require: rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 2.3
+  Exclude:
+    - 'db/migrate/**/*'
+    - 'db/schema.rb'
+    - 'bin/**/*'
+    - 'vendor/ruby/**/*'
+    - 'vendor/extensions/*/spec/dummy/**/*'
+    - 'vendor/extensions/*/bin/**/*'
+    - 'vendor/extensions/*/db/migrate/**/*'
+    - 'node_modules/**/*'
+
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context']
+  Exclude:
+    - 'config/environments/*.rb'
+    - 'spec/factories/**/*.rb'
+    - 'vendor/extensions/*/spec/**/*_spec.rb'
+    - spec/support/**/*
+
+Metrics/LineLength:
+  IgnoredPatterns: ['(\A|\s)#']
+
+RSpec/NestedGroups:
+  Max: 4
+
+RSpec/ExampleLength:
+  Exclude:
+    - 'spec/system/**/*'
